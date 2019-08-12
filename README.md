@@ -24,6 +24,7 @@ Once you installed telescope in your project, run migrate command.
 
 ```php artisan migrate```
 
+![telescope page](https://github.com/subathanikaikumaran/laravel-telescope/blob/master/db.png)
 
 Now you navigate to telescope page localhost/Laravel-telescope/public/telescope. ![telescope page](https://github.com/subathanikaikumaran/laravel-telescope/blob/master/telescope.png)
 
@@ -58,4 +59,27 @@ protected function gate()
 ```
 Add TELESCOPE_USERS=1,2 into your .env file.
 
+
+##### Create Schedule
+Edit your App\Console => Kernel.php file
+```
+protected function schedule(Schedule $schedule){
+   $schedule->command('inspire')->everyMinute()->storeOutput();
+   $schedule->command('backup run')->runInBackground()->storeOutput()->description('Backup Database');
+}
+```
+Then run php ```artisan schedule:run``` 
+
+##### Create Dump and Cache
+Create UserController
+```php artisan make:controller UserController``` 
+
+```
+public function index(){
+$data = User::orderBy('id','DESC')->paginate(10);
+dump($data);
+cache()->rememberForever('test', function () { return ['lessons'=>1300, 'hours'=>50808,'series'=>100]  ; });
+return view('home',compact('data'));
+}
+```
 
