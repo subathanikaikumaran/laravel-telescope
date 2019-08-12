@@ -53,3 +53,5 @@ protected function gate()
     }
 ```
 Add TELESCOPE_USERS=1,2 into your .env file.
+
+![telescope page](https://github.com/subathanikaikumaran/laravel-telescope/blob/master/telescope.png)
