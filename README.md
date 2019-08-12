@@ -24,7 +24,9 @@ Once you installed telescope in your project, run migrate command.
 
 'telescope_monitoring', 'telescope_entries_tags' and 'telescope_entries' tables will your database.
 
-Now you navigate to telescope page localhost/Laravel-telescope/public/telescope. if it is not working change your \vendor\laravel\telescope\resources\views\layout.blade.php file. And try it will work.
+Now you navigate to telescope page localhost/Laravel-telescope/public/telescope. ![telescope page](https://github.com/subathanikaikumaran/laravel-telescope/blob/master/telescope.png)
+
+if it is not working change your \vendor\laravel\telescope\resources\views\layout.blade.php file. And try it will work.
 Change these lines <!-- Global Telescope Object -->
 ```
 <script>
@@ -53,3 +55,5 @@ protected function gate()
     }
 ```
 Add TELESCOPE_USERS=1,2 into your .env file.
+
+
