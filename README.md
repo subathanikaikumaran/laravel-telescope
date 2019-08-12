@@ -5,7 +5,7 @@ a minimum of Laravel 5.7.7 to work.Telescope provides insight into the requests 
 ## Installation
 To begin create a new Laravel project
 
-```composer create-project --prefer-dist laravel/laravel Laravel-telescope```
+```composer create-project --prefer-dist laravel/laravel Laravel-telescope``` 
 
 Edit your database data in .env file.
 ```
@@ -13,6 +13,8 @@ DB_DATABASE=dbtelescope
 DB_USERNAME=<your database username>
 DB_PASSWORD=<your database password>
 ```
+##### Create Authentication
+```php artisan make:auth```
 
 ##### Install telescope in your laravel project
 ```composer require laravel/telescope --dev``` then 
@@ -22,11 +24,10 @@ Once you installed telescope in your project, run migrate command.
 
 ```php artisan migrate```
 
-'telescope_monitoring', 'telescope_entries_tags' and 'telescope_entries' tables will your database.
 
 Now you navigate to telescope page localhost/Laravel-telescope/public/telescope. ![telescope page](https://github.com/subathanikaikumaran/laravel-telescope/blob/master/telescope.png)
 
-if it is not working change your \vendor\laravel\telescope\resources\views\layout.blade.php file. And try it will work.
+if it is not working, change your \vendor\laravel\telescope\resources\views\layout.blade.php file and try, it will work.
 Change these lines <!-- Global Telescope Object -->
 ```
 <script>
@@ -36,6 +37,7 @@ Change these lines <!-- Global Telescope Object -->
 
 to this
 
+<!-- Global Telescope Object -->
 ```
 <script>
    window.Telescope = @json($telescopeScriptVariables);
