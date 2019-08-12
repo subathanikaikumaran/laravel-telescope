@@ -53,3 +53,5 @@ protected function gate()
     }
 ```
 Add TELESCOPE_USERS=1,2 into your .env file.
+
+![Alt text](C:\Users\DELL\Desktop/telescope.png?raw=true "Title")
